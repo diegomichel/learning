@@ -9,4 +9,5 @@ contents = File.open('zen', 'r')
 result = eval("contents.read")
 # Be careful eval is considered evil...
 # Never pass to eval any input from outside
-p eval("ls //")
+# Use define_method and send, eval is a dangerous
+# road to walk.
