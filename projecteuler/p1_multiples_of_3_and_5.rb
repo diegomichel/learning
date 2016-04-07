@@ -14,5 +14,14 @@ def sum_multiples limit
   (1..limit).each {|n| sum+=n if n%3==0 || n%5==0}
   sum
 end
-puts Benchmark.measure { sum_multiples 1_000 }
-puts Benchmark.measure { sum_multiples 1_000_000_000 }
+
+def sum_divisible_by(n, t)
+  p = t / n
+  return n*(p*(p+1))/2
+end
+def sum_multiples_fast t
+  sum_divisible_by(3, t) + sum_divisible_by(5, t) - sum_divisible_by(15, t)
+end
+
+puts Benchmark.measure { sum_multiples 10_000_000 }
+puts Benchmark.measure { sum_multiples_fast 10_000_000 }
