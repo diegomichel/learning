@@ -3,7 +3,9 @@ def get_binding
   binding
 end
 class Test
-  @test = "Hey"
+  def initialize
+    @test = "Hey"
+  end
   def get_binding
     binding
   end
