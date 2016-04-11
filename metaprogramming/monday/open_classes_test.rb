@@ -1,5 +1,5 @@
 require 'test/unit'
-
+load 'open_classes.rb'
 class OpenClassTest < Test::Unit::TestCase
   def setup
     @my_string = "/--{}+)HOLA!@#^&$"
