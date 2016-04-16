@@ -12,4 +12,7 @@ class TestWhatsAnObject < Test::Unit::TestCase
     @obj.my_method
     assert_equal(:@v, @obj.instance_variables.first)
   end
+  def test_methods_come_from_classes
+    assert_equal(MyClass.instance_methods, @obj.methods)
+  end
 end
