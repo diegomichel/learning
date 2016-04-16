@@ -15,4 +15,7 @@ class TestWhatsAnObject < Test::Unit::TestCase
   def test_methods_come_from_classes
     assert_equal(MyClass.instance_methods, @obj.methods)
   end
+  def test_methods_of_class
+    assert_not_equal(@obj.methods, MyClass.methods)
+  end
 end
