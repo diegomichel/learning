@@ -8,5 +8,6 @@ class TestClassOfEveryClass < Test::Unit::TestCase
     assert_equal(Class, Fixnum.class)
     assert_equal(Class, Float.class)
     assert_equal(Class, MyClass.class)
+    assert_equal(Class, Class.class)
   end
 end
