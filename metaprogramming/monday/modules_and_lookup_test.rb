@@ -16,4 +16,8 @@ class TestModuleLookup < Test::Unit::TestCase
   def test_class_d
     assert_equal('M#my_method()', D.new.my_method)
   end
+
+  def test_ancesorts_class_d
+    assert_equal([D, C, M, Object, Kernel, BasicObject], D.ancestors)
+  end
 end
