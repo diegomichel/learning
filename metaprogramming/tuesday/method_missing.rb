@@ -4,7 +4,6 @@ class MyClass
   end
 
   def method_missing(name, *args)
-    binding.pry
     dato = name.to_s
     if dato =~ /=$/
       @data[dato.chop] = args[0]
