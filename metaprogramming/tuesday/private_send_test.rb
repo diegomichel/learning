@@ -14,9 +14,8 @@ class TestPrivacyMatters < Test::Unit::TestCase
   def test_private_method_with_public_send
     begin
       response = MyClass.new.public_send(:my_private_method)
-    rescue
-      response = false
+    rescue Exception => e
+      assert_equal(NoMethodError, e.class)
     end
-    assert_equal(false, response)
   end
 end
