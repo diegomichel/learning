@@ -1,5 +1,4 @@
 require 'test/unit'
-require 'pry'
 
 class StringCloneMethodNames
   def self.define_all
