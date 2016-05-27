@@ -1,9 +1,15 @@
 require 'test/unit'
 require 'delegate'
 
-class Assistant
-  def initialize(name)
+class Expert
+  def help
+    'Please wait...'
+  end
+end
+class Assistant < DelegateClass(Expert)
+  def initialize(name, expert)
     @name = name
+    super(expert)
   end
 
   def read_email
@@ -28,7 +34,8 @@ end
 
 class ManagerAndAssistant < Test::Unit::TestCase
   def setup
-    @assistant = Assistant.new("Assistant")
+    @expert = Expert.new
+    @assistant = Assistant.new("Assistant", @expert)
     @manager = Manager.new("Manager",@assistant)
   end
 
@@ -42,5 +49,9 @@ class ManagerAndAssistant < Test::Unit::TestCase
 
   def test_check_schedule
     assert_equal('Assistant: looks good', @manager.check_schedule)
+  end
+
+  def test_help
+    assert_equal('Please wait...', @manager.help)
   end
 end
