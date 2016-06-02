@@ -1,0 +1,5 @@
+[<C-d> or ]<C-d> on a step jumps to the definition replacing the current buffer.
+
+<C-W>d or <C-w><C-d> on a step jumps to the definition in a new split buffer.
+
+[d or ]d on a step opens the definition on a split buffer, but keeps the cursor where it is.
