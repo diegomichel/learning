@@ -14,6 +14,6 @@ class TestMethodMissing < Test::Unit::TestCase
   # We know it will respond, but respond_to says it doesn't...
   # We have to fix this in another task :)
   def test_respond_to_fails
-    assert_equal(false, @obj.respond_to?(:randomstring123))
+    assert_equal(true, @obj.respond_to?(:randomstring123))
   end
 end

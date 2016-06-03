@@ -3,6 +3,10 @@ class MyClass
     @data = {}
   end
 
+  def respond_to?(name)
+    true
+  end
+
   def method_missing(name, *args)
     dato = name.to_s
     if dato =~ /=$/
